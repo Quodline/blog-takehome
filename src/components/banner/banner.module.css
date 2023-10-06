@@ -1,7 +1,9 @@
 .banner {
-    @apply h-[60vh]
+    @apply flex flex-col
+    h-[60vh]
     text-white
     bg-[url("/banner.jpg")] bg-pink-700
-        bg-center
-    bg-cover bg-blend-multiply;
+    bg-center
+    bg-cover
+    bg-blend-multiply;
 }

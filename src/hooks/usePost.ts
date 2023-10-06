@@ -1,13 +1,16 @@
-import { useQuery } from '@tanstack/react-query'
-import {fetchAllPosts, fetchPost} from '@/lib/posts'
+import {useMutation, useQuery} from '@tanstack/react-query'
+import {deletePost, fetchAllPosts, fetchPost} from '@/lib/posts'
 import {Post} from '@/types/post'
 
-const key = 'posts'
-
 export const useAllPosts = (page = 1) => {
-    return useQuery([key], () => fetchAllPosts(page))
+    return useQuery(['posts'], () => fetchAllPosts(page))
 }
 
 export const useGetPost = (id: Post['id']) => {
-    return useQuery([key], () => fetchPost(id))
+    return useQuery(['post'], () => fetchPost(id))
 }
+
+export const useDeletePost = () => {
+    return useMutation(deletePost)
+}
+

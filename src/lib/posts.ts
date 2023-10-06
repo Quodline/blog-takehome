@@ -10,3 +10,8 @@ export async function fetchPost(id: Post['id']): Promise<Post> {
     const {data} = await api.get(`/post/${id}`)
     return data
 }
+
+export async function deletePost(id: Post['id']): Promise<string> {
+    await api.delete(`/post/${id}`)
+    return id
+}

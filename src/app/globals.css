@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    article > p {
-        @apply max-w-5xl text-lg my-4;
+    article  p {
+        @apply max-w-5xl text-lg my-4 text-justify;
     }
 }

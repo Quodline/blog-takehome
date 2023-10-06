@@ -34,9 +34,9 @@ export default function Posts() {
     return (
         <div className="p-4 bg-gray-200">
             <h2 className="font-semibold text-2xl">{pageIndexString()}</h2>
-            <div className="grid grid-cols-4 space-x-2 justify-center">
+            <div className="grid lg:grid-cols-4 space-x-2 justify-center">
                 {data?.data.map(post => (
-                    <div key={post.id} className="card my-2 w-96 bg-base-100 shadow-xl p-4">
+                    <div key={post.id} className="card my-2 lg:w-96 bg-base-100 shadow-xl p-4">
                         <div className="flex space-x-4">
                             <img src={post.owner.picture}
                                  alt="Profile picture"
@@ -53,7 +53,7 @@ export default function Posts() {
                     </div>
                 ))}
             </div>
-            <div className="flex justify-center space-x-2 flex-wrap">
+            <div className="flex space-x-2 overflow-x-scroll">
                 {Array(totalPages()).fill(0).map((n, idx) => (
                     <Link key={idx+1}
                           href={`/?page=${idx+1}`}
