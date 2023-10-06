@@ -1,0 +1,7 @@
+.banner {
+    @apply h-[60vh]
+    text-white
+    bg-[url("/banner.jpg")] bg-pink-700
+        bg-center
+    bg-cover bg-blend-multiply;
+}
