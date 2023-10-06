@@ -5,7 +5,7 @@ import {useRouter} from 'next/navigation'
 
 export default function Options({id}: {id: Post['id']}) {
     const deletePost = useDeletePost()
-    const deleteModalRef = useRef<HTMLDialogElement>()
+    const deleteModalRef = useRef<HTMLDialogElement>(null)
     const router = useRouter()
 
     const onDelete = async () => {
