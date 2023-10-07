@@ -24,4 +24,4 @@ interface Location {
     timezone: string
 }
 
-export {User}
+export {User, PartialUser}
