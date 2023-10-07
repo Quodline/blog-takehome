@@ -14,6 +14,8 @@ interface User {
     location: Location
 }
 
+interface PartialUser extends Pick<User, 'id' | 'title' | 'firstName' | 'lastName' | 'picture'> {}
+
 interface Location {
     street: string
     city: string

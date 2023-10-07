@@ -1,13 +1,25 @@
-import {User} from '@/types/user'
+import {PartialUser, User} from '@/types/user'
 
 interface Post {
     id: string
     image: string
     likes: number
+    link?: string,
     tags: string[]
     text: string
     publishDate: string
-    owner: Pick<User, 'id' | 'title' | 'firstName' | 'lastName' | 'picture'>
+    owner: PartialUser
+}
+
+interface CreatePostRequest {
+    title: string
+    content: string[]
+}
+
+interface UpdatePostRequest {
+    id: User['id']
+    title: string
+    content: string[]
 }
 
 interface PostResponse {

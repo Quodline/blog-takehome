@@ -1,11 +1,18 @@
 import Posts from '@/app/posts'
 import Banner from '@/components/banner/banner'
+import Link from 'next/link'
 
 export default async function Home() {
     return (
-        <main>
-            <Banner>The #1 relationship blog for Africans</Banner>
-            <Posts/>
-        </main>
+        <>
+            <Banner options={
+                <Link href="/write" className="btn btn-outline btn-accent">New Post</Link>
+            }>
+                The #1 relationship blog for Africans
+            </Banner>
+            <main>
+                <Posts/>
+            </main>
+        </>
     )
 }

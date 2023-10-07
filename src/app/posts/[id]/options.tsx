@@ -1,21 +1,23 @@
 import {useRef} from 'react'
-import {useDeletePost} from '@/hooks/usePost'
 import {Post} from '@/types/post'
 import {useRouter} from 'next/navigation'
+import {useMutation} from '@tanstack/react-query'
+import {deletePost} from '@/lib/posts'
+import Link from 'next/link'
 
-export default function Options({id}: {id: Post['id']}) {
-    const deletePost = useDeletePost()
+export default function Options({id}: { id: Post['id'] }) {
+    const deletePostMutation = useMutation(deletePost)
     const deleteModalRef = useRef<HTMLDialogElement>(null)
     const router = useRouter()
 
     const onDelete = async () => {
-        await deletePost.mutateAsync(id)
+        await deletePostMutation.mutateAsync(id)
         router.push('/')
     }
 
     return (
-        <section className="flex p-4 space-x-4 justify-end">
-            <button className="btn btn-outline btn-accent">Edit</button>
+        <>
+            <Link href={`/posts/${id}/edit`} className="btn btn-outline btn-accent">Edit</Link>
             <button className="btn btn-outline btn-error"
                     onClick={() => deleteModalRef.current?.showModal()}>
                 Delete
@@ -32,6 +34,6 @@ export default function Options({id}: {id: Post['id']}) {
                     </div>
                 </div>
             </dialog>
-        </section>
+        </>
     )
 }

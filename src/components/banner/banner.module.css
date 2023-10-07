@@ -1,6 +1,7 @@
 .banner {
     @apply flex flex-col
-    h-[60vh]
+    p-4 lg:pl-8
+    h-[50vh]
     text-white
     bg-[url("/banner.jpg")] bg-pink-700
     bg-center
