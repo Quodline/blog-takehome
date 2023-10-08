@@ -7,17 +7,14 @@ interface Props {
     }
 }
 
-export default function EditPost({params}: Props) {
-    const {id} = params
-
-    return (
+export default function EditPost({params}: Props) {return (
         <>
             <Banner>
                 <div>You fail only if you stop writing.</div>
                 <em className="text-lg">Ray Bradbury</em>
             </Banner>
             <main>
-                <Wrapper id={id}/>
+                <Wrapper id={params.id}/>
             </main>
         </>
     )

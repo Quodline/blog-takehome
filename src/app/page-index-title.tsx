@@ -8,8 +8,10 @@ interface Props {
 
 export default function PageIndexTitle({page, limit, total}: Props) {
     const pageIndexString = useCallback(() => {
-        const startIndex = page * limit
-        return `Showing ${startIndex + 1} to ${startIndex + limit} of ${total} items`
+        const startIndex = (page-1) * limit
+        const endIndex = Math.min(total, startIndex+limit)
+
+        return `Showing ${startIndex+1} to ${endIndex} of ${total} items`
     }, [page, limit, total])
 
     return (

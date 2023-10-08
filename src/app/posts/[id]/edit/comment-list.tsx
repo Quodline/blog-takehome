@@ -10,12 +10,16 @@ interface Props {
 
 export default function CommentList({postId}: Props) {
     const queryClient = useQueryClient()
+
     const [message, setMessage] = useState('')
     const {data: comments} = useQuery(['comments'], () => fetchComments(postId))
+
     const createCommentMutation = useMutation(createComment, {
         onSuccess() {
             setMessage('')
-            queryClient.invalidateQueries({ queryKey: ['comments'] })
+
+            // trigger a refresh of comments
+            queryClient.invalidateQueries({queryKey: ['comments']})
         }
     })
 

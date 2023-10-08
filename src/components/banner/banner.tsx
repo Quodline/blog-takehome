@@ -1,16 +1,25 @@
-import Link from "next/link"
-import styles from "./banner.module.css"
+import Link from 'next/link'
+import styles from './banner.module.css'
 import {PropsWithChildren, ReactNode} from 'react'
+import AnimatedTitle from '@/components/banner/animated-title'
 
-export default function Banner({children, options}: PropsWithChildren<{ options?: ReactNode }>) {
+interface Props extends PropsWithChildren {
+    /**
+     * Menu buttons to be displayed at the bottom of the banner
+     */
+    options?: ReactNode
+}
+
+export default function Banner({children, options}: Props) {
     return (
         <header className={styles.banner}>
-            <nav className="pb-4">
+            <nav className="flex justify-between pb-4">
                 <h1 className="font-bold text-3xl">
                     <Link href="/">LoveHub</Link>
                 </h1>
+                <form></form>
             </nav>
-            <h2 className="py-4 flex flex-col justify-end text-2xl lg:text-5xl flex-1">{children}</h2>
+            <AnimatedTitle>{children}</AnimatedTitle>
             {options && (
                 <section className="flex py-4 space-x-4 justify-end">{options}</section>
             )}

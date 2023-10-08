@@ -15,7 +15,6 @@ export async function createPost(req: CreatePostRequest): Promise<Post> {
     const method = 'POST'
     const body = JSON.stringify({
         text: req.title,
-        image: 'https://randomuser.me/api/portraits/med/women/5.jpg',
         owner: '60d0fe4f5311236168a10a0b',
         tags: req.content,
     })
@@ -29,7 +28,6 @@ export async function updatePost(req: UpdatePostRequest): Promise<Post> {
     const method = 'PUT'
     const body = JSON.stringify({
         text: req.title,
-        image: 'https://randomuser.me/api/portraits/med/women/5.jpg',
         tags: req.content,
     })
 
@@ -39,6 +37,7 @@ export async function updatePost(req: UpdatePostRequest): Promise<Post> {
 }
 
 export async function deletePost(id: Post['id']): Promise<string> {
-    await fetch(`${baseURL}/post/${id}`, {headers})
+    const method = 'DELETE'
+    await fetch(`${baseURL}/post/${id}`, {method, headers})
     return id
 }

@@ -36,10 +36,12 @@ export default function TextEditor({paragraphs, updateParagraph}: Props) {
                           className="textarea textarea-bordered h-max"
                           value={para}
                           onChange={setOnChange(index)}
-                          autoFocus={true}
-                />
+                          autoFocus={true}/>
             ))}
-            <button className="btn btn-primary btn-outline self-center" onClick={newParagraph}>New Paragraph</button>
+            <button className="btn btn-primary btn-outline self-center"
+                    onClick={newParagraph}>
+                New Paragraph
+            </button>
         </section>
     )
 }

@@ -23,5 +23,3 @@ interface Location {
     country: string
     timezone: string
 }
-
-export {User, PartialUser}

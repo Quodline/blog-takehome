@@ -32,7 +32,8 @@ export default function EditPostForm({post}: Props) {
 
     return (
         <>
-            <form className="max-w-4xl mx-auto p-4" onSubmit={publish}>
+            <form className="flex flex-col max-w-4xl mx-auto p-4" onSubmit={publish}>
+                <button className="btn btn-primary self-end my-4">Publish</button>
                 <h3 className="text-lg font-bold">Edit post</h3>
                 <div className="form-control">
                     <label className="label">

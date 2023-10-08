@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import cn from 'classnames'
 import {useCallback} from 'react'
+import { motion } from 'framer-motion'
+import {pageLinkProps} from '@/app/framer-props'
 
 interface Props {
     total: number
@@ -14,13 +16,14 @@ export default function Pagination({total, limit, page}: Props) {
     }, [total, limit])
 
     return (
-        <div className="flex space-x-2 overflow-x-auto">
+        <div className="flex space-x-2 overflow-x-auto lg:flex-wrap lg:justify-center p-4 lg:p-10">
             {Array(totalPages()).fill(0).map((n, idx) => (
-                <Link key={idx + 1}
-                      href={`/?page=${idx + 1}`}
-                      className={cn("btn btn-primary my-1 w-12 font-bold", {
-                          'btn-accent': page === idx + 1
-                      })}>{idx + 1}</Link>
+                <motion.div key={idx + 1} {...pageLinkProps}>
+                    <Link href={`/?page=${idx + 1}`}
+                          className={cn("btn my-1 w-12 font-bold shadow-2xl", {
+                              'btn-primary': page === idx + 1
+                          })}>{idx + 1}</Link>
+                </motion.div>
             ))}
         </div>
     )

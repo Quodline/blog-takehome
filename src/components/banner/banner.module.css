@@ -2,9 +2,14 @@
     @apply flex flex-col
     p-4 lg:pl-8
     h-[50vh]
-    text-white
     bg-[url("/banner.jpg")] bg-pink-700
     bg-center
     bg-cover
-    bg-blend-multiply;
+    bg-blend-multiply
+    text-white
+    font-bold;
+}
+
+.bannerTitle {
+    @apply py-4 flex flex-col justify-end text-2xl lg:text-5xl flex-1;
 }
