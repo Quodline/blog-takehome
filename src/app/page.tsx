@@ -1,7 +1,6 @@
 import Posts from '@/app/posts'
 import Banner from '@/components/banner/banner'
 import Link from 'next/link'
-import {Metadata} from 'next'
 
 export default async function Home() {
     return (

@@ -1,6 +1,13 @@
 import {CreatePostRequest, Post, PostResponse, PostServer, UpdatePostRequest} from '@/types/post'
 import {baseURL, headers} from '@/lib/fetch'
 
+/**
+ * Convert format of post data received to use domain terms of this application.
+ *
+ * @param post The post object from dummy api
+ *
+ * @return The format needed by the app
+ */
 function postTransformer(post: PostServer): Post {
     const {id, text: title, tags: content, publishDate, owner} = post
 
