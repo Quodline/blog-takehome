@@ -34,6 +34,7 @@ export default function NewPostForm() {
                     <label className="label">Title</label>
                     <input type="text"
                            placeholder="Article title"
+                           required
                            className="input input-bordered"
                            value={title}
                            onChange={event => setTitle(event.target.value)}/>

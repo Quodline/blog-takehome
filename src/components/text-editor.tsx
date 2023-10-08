@@ -33,6 +33,7 @@ export default function TextEditor({paragraphs, updateParagraph}: Props) {
             {paragraphs.map((para, index) => (
                 <textarea key={index}
                           placeholder="Start typing..."
+                          required
                           className="textarea textarea-bordered h-max"
                           value={para}
                           onChange={setOnChange(index)}

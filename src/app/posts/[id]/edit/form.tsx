@@ -41,6 +41,7 @@ export default function EditPostForm({post}: Props) {
                     </label>
                     <input type="text"
                            placeholder="Article title"
+                           required
                            className="input input-bordered"
                            value={title}
                            onChange={event => setTitle(event.target.value)} />
