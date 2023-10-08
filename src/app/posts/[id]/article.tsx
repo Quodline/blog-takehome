@@ -8,7 +8,7 @@ import Options from '@/app/posts/[id]/options'
 import OwnerDetails from '@/app/posts/[id]/owner-details'
 import {useQuery} from '@tanstack/react-query'
 import {fetchPost} from '@/lib/posts'
-import CommentList from '@/app/posts/[id]/edit/comment-list'
+import CommentList from '@/app/posts/[id]/comment-list'
 
 interface Props {
     id: Post['id']

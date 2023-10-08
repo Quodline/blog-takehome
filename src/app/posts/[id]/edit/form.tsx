@@ -26,7 +26,8 @@ export default function EditPostForm({post}: Props) {
         await updatePostMutation.mutateAsync({
             id: post.id,
             title,
-            content: paragraphs,
+            // remove empty paragraphs
+            content: paragraphs.filter(para => para.length),
         })
     }
 
@@ -48,7 +49,7 @@ export default function EditPostForm({post}: Props) {
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Content</span>
+                        <span className="label-text">Content (Leave empty to remove a paragraph)</span>
                     </label>
                     <TextEditor paragraphs={paragraphs} updateParagraph={updateParagraphs}/>
                 </div>
