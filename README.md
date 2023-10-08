@@ -8,6 +8,12 @@
 - Cypress
 
 ## Getting Started
+Go to https://dummyapi.io and get an app id by registering.
+
+In .env.local set the app id
+```
+NEXT_PUBLIC_DUMMY_API_KEY=[app-id]
+```
 
 Install
 
