@@ -21,14 +21,14 @@ export default function Article({id}: Props) {
 
     return (
         <>
-            <Banner options={<Options id={id}/>}>{post?.text}</Banner>
+            <Banner options={<Options id={id}/>}>{post?.title}</Banner>
             {post && (
                 <article className="flex flex-col p-10">
                     <OwnerDetails owner={post?.owner} publishDate={post?.publishDate}/>
                     <section className="flex flex-col lg:flex-row">
                         <div className="lg:basis-3/4">
-                            {post?.tags.map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
+                            {post?.content.map((paragraph, index) => (
+                                <p key={index} className="article-para">{paragraph}</p>
                             ))}
                         </div>
                         <CommentList postId={id}/>

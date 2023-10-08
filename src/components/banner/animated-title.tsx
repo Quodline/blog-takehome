@@ -6,7 +6,7 @@ import {PropsWithChildren} from 'react'
 
 export default function AnimatedTitle({children}: PropsWithChildren) {
     return (
-        <motion.h2 className={styles.bannerTitle}
+        <motion.h2 id="banner-title" className={styles.bannerTitle}
                    initial={{x: 3000}}
                    animate={{x: 0}}
                    transition={{duration: 1}}>{children}</motion.h2>

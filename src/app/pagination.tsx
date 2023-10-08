@@ -16,7 +16,7 @@ export default function Pagination({total, limit, page}: Props) {
     }, [total, limit])
 
     return (
-        <div className="flex space-x-2 overflow-x-auto lg:flex-wrap lg:justify-center p-4 lg:p-10">
+        <div id="pagination" className="flex space-x-2 overflow-x-auto lg:flex-wrap lg:justify-center p-4 lg:p-10">
             {Array(totalPages()).fill(0).map((n, idx) => (
                 <motion.div key={idx + 1} {...pageLinkProps}>
                     <Link href={`/?page=${idx + 1}`}

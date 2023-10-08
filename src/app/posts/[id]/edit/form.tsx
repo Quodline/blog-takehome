@@ -12,8 +12,8 @@ interface Props {
 
 export default function EditPostForm({post}: Props) {
     const router = useRouter()
-    const [title, setTitle] = useState(post.text || '')
-    const [paragraphs, updateParagraphs] = useImmer<string[]>(post.tags || [])
+    const [title, setTitle] = useState(post.title || '')
+    const [paragraphs, updateParagraphs] = useImmer<string[]>(post.content || [])
 
     const updatePostMutation = useMutation(updatePost, {
         onSuccess(data) {
